@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scroll-back.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Exo:400,500,700|Lato:400,700,900|Open+Sans:300,400,400i,600,700|Anton:400"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <title>Booking Demo</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-bg">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end  mr-5" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active ">
+                    <a class="nav-link" href="#"><i class="fas fa-home"></i>&nbsp;ANASAYFA <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#"><i class="fas fa-globe-asia"></i>&nbsp;KURUMSAL</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#"><i class="fas fa-book"></i>&nbsp;HİZMETLERİMİZ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-concierge-bell"></i>&nbsp;İLETİŞİM</a>
+                </li>
+            </ul>
+        </div>
+        <span class="mr2 toggle-icon" style="font-size:30px; cursor:pointer; display:none;" onclick="openNav()">&#9776;</span>
+    </nav>
+
+    <div class="container-fluid">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">ANASAYFA</a>
+            <a href="#">KURUMSAL</a>
+            <a href="#">HİZMETLERİMİZ</a>
+            <a href="#">İLETİŞİM</a>
+        </div>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+            <div class="booking-area">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true"><i class="fas fa-plane"></i> UÇAK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false"><i class="fas fa-bed"></i> OTEL</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+
+                    <!--  UÇUŞ ARAMA EKRANI -->
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputEmail4">Nereden</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="(AYT) ANTALYA">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Nereye</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="(IST) İstanbul- Atatürk">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Uçuş Tipi</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" checked="checked" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label for=" inlineRadio1">Gidiş Dönüş</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineRadio2">Tek Yön</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <label for="inputAddress">Gidiş</label>
+                                    <input type="text" class="form-control form-control-sm" id="datepicker1"
+                                        placeholder="ay/gün/yil">
+                                </div>
+                                <div class="form-group col-md-2 divDatepicker2">
+                                    <label for="inputAddress">Dönüş</label>
+                                    <input type="text" class="form-control form-control-sm" id="datepicker2"
+                                        placeholder="ay/gün/yil">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Yetişkin (12+)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Çocuk (2-12)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputState">Bebek (0-2)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                            </div> <button type="submit" class="btn btn-success text-white">Uçuş Ara</button>
+                        </form>
+                    </div>
+
+                    <!--  OTEL ARAMA -->
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputEmail4">Bölge, Şehir</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="(AYT) ANTALYA">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="inputAddress">Giriş Tarihi</label>
+                                    <input type="text" class="form-control form-control-sm" id="datepicker3"
+                                        placeholder="ay/gün/yil">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputAddress">Çıkış Tarihi</label>
+                                    <input type="text" class="form-control form-control-sm" id="datepicker4"
+                                        placeholder="ay/gün/yil">
+                                </div>
+
+
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Yetişkin (12+)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Çocuk (2-12)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Bebek (0-2)</label>
+                                    <select id="inputState" class="form-control form-control-sm">
+                                        <option selected>Seçiniz...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary text-white">Otel Ara</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img class="d-block  w-100" src="images/slide-image-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block  w-100" src="images/slide-image-1.jpg"" alt=" Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block  w-100" src="images/slide-image-1.jpg"" alt=" Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+
+<div class="ourAdvantage">
+        <div class="row">
+
+            <div class="col-md-12 text-center ">
+                <h1 class="h1">Neden Mi Tercih Ediliyoruz ?</h1>
+                <h2 class="h2">Avantajlarımız</h2>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4  text-center">
+                <div class="circle box-shadow">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <h3 class="h3">En Güvenilir Hava<br /> Yolları</h3>
+                <p>Sadece çok yüksek itibara sahip hava yolları şirketleri ile çalışıyoruz.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="circle box-shadow">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <h3 class="h3">Her Ay 5 Milyondan <br /> Fazla Ziyaretçi</h3>
+                <p>Bilet Rezervasyonu yapmak için her ay 5 milyondan fazla ziyaretçi sitemizi
+                    kullanuyor.
+                </p>
+            </div>
+            <div class="col-md-4 mr-0 text-center">
+                <div class="circle box-shadow">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <h3 class="h3">Hızlı ve Güvenilir <br /> Rezervasyon</h3>
+                <p>Kolay kullanıma sahip, hızlı ve güvenilir bilet rezervasyon sistemimiz
+                    sayesinde yeni kullanıcılarımız bile sıkıntı yaşamıyor.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+        <section class="support">
+            <div class="row ">
+                <div class="col-sm-10 ml-auto mr-auto text-center">
+                    <h4 class="h4">7/24 Kesintisiz Destek</h4>
+                    <p>
+                        Destek Hizmetimiz, biletlerinizi satın almanıza yardımcı olmak için
+                        haftada 7 gün, günde 24 saat hizmetinizdedir.
+                    </p>
+                    <button class="btn btn-lg btn-warning text-dark">İletişime Geç</button>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+            <div class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
+                            <img src="images/logo.png" alt="">
+                        </h5>
+                        <p>Booking Demo "en uygun bilet" prensibiyle kurulmuş olup;
+                            yüzlerce hava yolu firmasının sunduğu uçuş seferlerini sizin için birkaç adımda kolayca
+                            listeleyen bilet satış sitesidir.</p>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="mt-3 mb-4">Booking Demo</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Kurumsal</a>
+                            </li>
+                            <li>
+                                <a href="#!">Hizmetlerimiz</a>
+                            </li>
+                            <li>
+                                <a href="#!">Basında Biz</a>
+                            </li>
+                            <li>
+                                <a href="#!">İletişim</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="mt-3 mb-4">Popüler Uçuşlar</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">İstanbul - Antalya</a>
+                            </li>
+                            <li>
+                                <a href="#!">İstanbul - Ankara</a>
+                            </li>
+                            <li>
+                                <a href="#!">Antalya - Lefkosa</a>
+                            </li>
+                            <li>
+                                <a href="#!">Adana - İstanbul</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class=" mt-3 mb-4">Bilgilendirme</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Yardım</a>
+                            </li>
+                            <li>
+                                <a href="#!">Hükümler ve Koşullar</a>
+                            </li>
+                            <li>
+                                <a href="#!">Gizlilik Politikası</a>
+                            </li>
+                            <li>
+                                <a href="#!">Site Haritası</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h5 class="mb-1">Hemen Ücretsiz</h5>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#!" class="btn btn-success btn-rounded">Üye Ol!</a>
+                </li>
+            </ul>
+            <hr>
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-gplus mx-1">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#/"> Bookingdemo.com</a>
+            </div>
+
+
+        </footer>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <a href="#0" class="cd-top js-cd-top"><i class="fab fa-facebook-f"></i></a>
+    <script src="js/scroll-back.js" type="text/javascript"></script>
+</body>
+
+</html>
